@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../config';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -10,11 +11,16 @@ const Signup = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:5000/api/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
+    // const res = await fetch('http://localhost:5000/api/signup', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ email, password })
+    // });
+    const res = await fetch(`${BASE_URL}/api/signup`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, password })
+});
 
     const data = await res.json();
     if (res.ok) {
