@@ -153,7 +153,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from '../config';
+import { BASE_URL } from '../src/config';
 
 const Login = () => {
   const [email, setemail] = useState('');
