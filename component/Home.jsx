@@ -14,7 +14,10 @@ const Home = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-4">
+      {/* <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-4"> */}
+      {/* <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white pt-28 sm:pt-32 px-4"> */}
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white px-4 pt-[8rem]">
+
         <motion.h1
           className="text-4xl sm:text-5xl text-center text-purple-500 font-extrabold mb-10"
           initial={{ opacity: 0, y: -20 }}
@@ -24,7 +27,7 @@ const Home = () => {
           🎮 Game Store
         </motion.h1>
 
-        <div className="flex justify-center mb-8">
+        {/* <div className="flex justify-center mb-8">
           <input
             type="text"
             placeholder="🔍 Search by title or genre..."
@@ -32,7 +35,17 @@ const Home = () => {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full max-w-lg px-4 py-2 rounded-md border border-purple-500 bg-black text-purple-200 placeholder-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           />
-        </div>
+        </div> */}
+        <div className="flex justify-center px-4 sm:px-0 mb-8">
+  <input
+    type="text"
+    placeholder="🔍 Search by title or genre..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    className="w-full sm:max-w-lg px-4 py-2 rounded-md border border-purple-500 bg-black text-purple-200 placeholder-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+  />
+</div>
+
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {filteredGames.map((game, index) => (
